@@ -4,10 +4,8 @@ const { Schema, model } = require("mongoose");
 const diveSchema = new Schema(
     {   
         username: {
-            type: String,
-            required: false,
-            unique: true,
-            trim: true,
+            type: Schema.Types.ObjectId,
+            ref: 'User'
           },
         location: {
             type: String,
