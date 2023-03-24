@@ -27,8 +27,13 @@ Route:
     [x]- index 
        []- get 
 
+<<<<<<< HEAD
     []- Dive
        []- create log 
+=======
+    [x]- Dive
+       [x]- create dive log 
+>>>>>>> 00afcc2 (dive route completed)
             []- get, post
         []- update 
             []- get, post
