@@ -7,7 +7,7 @@ const router = express.Router();
 
 //Get display dive
 
-router.get("/dive", isUserLoggedIn, (req, res, next) => {
+router.get("/dive",  (req, res, next) => {
   Dive.find()
     .populate("user")
     .then((diveArr) => {
@@ -15,7 +15,7 @@ router.get("/dive", isUserLoggedIn, (req, res, next) => {
         dive: diveArr,
       };
 
-      res.render("dive-logs", data);
+      res.render("dive/dive", data);
     })
     .catch((e) => {
       console.log("error getting dives from DB", e);
@@ -26,7 +26,7 @@ router.get("/dive", isUserLoggedIn, (req, res, next) => {
 // Create dive form
 router.get("/dive/create", isUserLoggedIn, (req, res, next) => {
   res.send("hello");
-  res.render("dive/create");
+  //res.render("dive/create");
 });
 
 // Post dive form
@@ -108,7 +108,7 @@ router.post("/dive/:diveId/edit", isUserLoggedIn, (req, res, next) => {
 
   Dive.findByIdAndUpdate(diveId, { username, location, date, diveNumber, timeIn, timeOut, bottomTime, depth, airStart, airEnd, visibility, comment }, { new: true })
   .then(updateDive => {
-    res.redirect(`/dive/${updatedDive.id}`); //redirects to dive details page
+    res.redirect(`/dive/${updateDive.id}`); //redirects to dive details page
   })
   .catch(error => next(error));
 });
