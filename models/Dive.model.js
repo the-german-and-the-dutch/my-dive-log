@@ -43,6 +43,6 @@ const diveSchema = new Schema(
     }
 );
     
-    const dive = model("dive", diveSchema);
+    const Dive = model("Dive", diveSchema);
     
-    module.exports = dive;
+    module.exports = Dive;
