@@ -1,8 +1,14 @@
 const { Schema, model } = require("mongoose");
 
 
-const logBookSchema = new Schema(
-    {
+const diveSchema = new Schema(
+    {   
+        username: {
+            type: String,
+            required: false,
+            unique: true,
+            trim: true,
+          },
         location: {
             type: String,
             required: true,
@@ -37,6 +43,6 @@ const logBookSchema = new Schema(
     }
 );
     
-    const logBook = model("logBook", logBookSchema);
+    const dive = model("dive", diveSchema);
     
-    module.exports = logBook;
+    module.exports = dive;
