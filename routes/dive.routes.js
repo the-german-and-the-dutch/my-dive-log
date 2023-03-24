@@ -62,12 +62,6 @@ router.post("/dive",  (req, res, next) => {
         console.log("error creating new dive", e);
         next(e);
       });
-<<<<<<< HEAD
 })
 
 module.exports = router
-=======
-});
-
-module.exports = router;
->>>>>>> 3f4007125685fdc897f3e9ed218f2fc89d521c5f
