@@ -1,14 +1,14 @@
 const express = require('express');
 const Dive = require('../models/dive.model');
 
-const isUserLoggedIn = require("../middleware/isLoggedIn");
+//const isUserLoggedIn = require("../middleware/isLoggedIn");
 
 const router = express.Router();
 
 
 //Get display dive
 
-router.get("/dive", isUserLoggedIn, (req, res, next) => {
+router.get("/dive",  (req, res, next) => {
   Dive.find()
     .populate("user")
     .then((diveArr) => {
@@ -26,7 +26,7 @@ router.get("/dive", isUserLoggedIn, (req, res, next) => {
 
 
 // Create dive form
-router.get("/dive/create", isUserLoggedIn, (req, res, next) => {
+router.get("/dive/create",  (req, res, next) => {
     res.send("hello")
     res.render("dive/create")
 })
@@ -34,7 +34,7 @@ router.get("/dive/create", isUserLoggedIn, (req, res, next) => {
 
 
 // Post dive form
-router.post("/dive", isUserLoggedIn, (req, res, next) => {
+router.post("/dive",  (req, res, next) => {
 
     const diveDetails = {
         username: req.body.username,
@@ -59,4 +59,6 @@ router.post("/dive", isUserLoggedIn, (req, res, next) => {
         console.log("error creating new dive", e);
         next(e);
       });
-})
+});
+
+module.exports = router;
