@@ -1,7 +1,9 @@
 const express = require('express');
+
 const Dive = require('../models/dive.model');
 
 const isUserLoggedIn = require("../middleware/isLoggedIn");
+
 
 const router = express.Router();
 
@@ -28,6 +30,7 @@ router.get("/dive", isUserLoggedIn, (req, res, next) => {
 // Create dive form
 router.get("/dive/create", isUserLoggedIn, (req, res, next) => {
     res.send("hello")
+    //
     res.render("dive/create")
 })
 
@@ -60,3 +63,5 @@ router.post("/dive", isUserLoggedIn, (req, res, next) => {
         next(e);
       });
 })
+
+module.exports = router

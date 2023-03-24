@@ -6,7 +6,7 @@ Models:
         [x]- password
         -
 
-    - Dive Model, creat, read, update, delete
+    - logbook, creat, read, update, delete
         [x]- time in time out, 
         [x]- bottomTime
         [x]- depth
@@ -25,10 +25,10 @@ Models:
 
 Route: 
     [x]- index 
-       [x]- get 
+       []- get 
 
     []- Dive
-       []- create dive log 
+       []- create log 
             []- get, post
         []- update 
             []- get, post
