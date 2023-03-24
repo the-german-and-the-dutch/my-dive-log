@@ -23,14 +23,14 @@ const diveSchema = new Schema(
         timeIn: Number,
         timeOut: Number,
         bottomTime: Number, //calculate time ref: timeIn+timeOut
-        depth:{
+        depth: {
             type: Number,
             required: true,
         },
         airStart: Number, 
         airEnd: Number,
         visibility: String, 
-        comment:{
+        comment: {
             type: String,
             required: true,
         },

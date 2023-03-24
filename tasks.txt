@@ -25,20 +25,15 @@ Models:
 
 Route: 
     [x]- index 
-       []- get 
+       [x]- get 
 
-<<<<<<< HEAD
-    []- Dive
-       []- create log 
-=======
     [x]- Dive
        [x]- create dive log 
->>>>>>> 00afcc2 (dive route completed)
-            []- get, post
-        []- update 
-            []- get, post
-        []- delete 
-            []- get, post
+            [x]- get, post
+        [x]- update 
+            [x]- get, post
+        [x]- delete 
+            [x]- get, post
 
     [x]- authentification
 
