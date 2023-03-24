@@ -31,7 +31,7 @@ const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
 const diveRoutes = require("./routes/dive.routes");
-app.use("/dive", diveRoutes);
+app.use("/", diveRoutes);
 
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
