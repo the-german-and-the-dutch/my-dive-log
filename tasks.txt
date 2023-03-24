@@ -1,0 +1,71 @@
+Project 2, my dive log.
+
+Models:
+    [x]- users, create and read
+        [x]- email
+        [x]- password
+        -
+
+    - logbook, creat, read, update, delete
+        [x]- time in time out, 
+        [x]- bottomTime
+        [x]- depth
+        [x]- number dive
+        [x]- date 
+        [x]- location
+        [x]- air start
+        [x]- air end
+        [x]- visibility
+        [x]- comment
+        Bonus:
+        []- createdBy, reference to user model
+        []- image
+        []- location on maps 
+
+
+Route: 
+    []- index 
+       []- get 
+
+    []- logbook
+       []- create log 
+            []- get, post
+        []- update 
+            []- get, post
+        []- delete 
+            []- get, post
+
+    [x]- authentification
+
+        [x]- create account
+            [x]- get, post, bcrypt
+        [x]- log in
+            [x]- get, post, bcrypt
+        [x]- log out 
+            []- get, post, bcrypt
+        [x]- get user profile
+            [x]- session 
+
+    []- list of logs
+        []- display list
+            []- get
+
+
+Views: 
+    []- layout
+        []- nav
+    []- homepage/index
+    
+    []- logbook view
+        []- create 
+        []- details
+        []- edit
+        []- list all logs by user
+
+    []- authentication
+        []- log in/out
+        []- register
+
+    []- error 
+        []- error
+        []- not found
