@@ -1,32 +1,33 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{{appTitle}}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>{{appTitle}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
 
-  <body>
-    <header>
+<body>
+  <header>
     <nav>
       <a href="/">Home</a>
       <a href="/dive">View logbook</a>
-       <a href="/auth/user-profile">Diver Profile</a>
+      <a href="/auth/user-profile">Diver Profile</a>
       <a href="/dive/create">Create dive log</a>
       <a href="/auth/signup">Sign up</a>
       <a href="/auth/login">login</a>
+    </nav>
+    <div class="logout-btn">
+      <form method="POST" action='/auth/logout'>
+        <button type="submit">Logout</button>
+      </form>
+    </div>
+  </header>
 
-     <form method="POST" action='/auth/logout'>
-          <button type="submit">Logout</button>
-        </form>
-      </nav>
-      </header>
+  {{{body}}}
 
-    {{{body}}}
-
-    <script src="/js/script.js"></script>
-  </body>
+  <script src="/js/script.js"></script>
+</body>
 
 </html>

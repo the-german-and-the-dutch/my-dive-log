@@ -10,3 +10,13 @@ a {
 h1 {
   color: 15px;
 }
+
+.logout-btn button {
+  position: absolute;
+  right: 15;
+  margin-top: -25px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 10;
+}
