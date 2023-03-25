@@ -16,6 +16,7 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+
 // GET /auth/signup
 router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
@@ -87,6 +88,7 @@ router.get("/login", isLoggedOut, (req, res) => {
   res.render("auth/login");
 });
 
+
 // POST /auth/login
 router.post("/login", isLoggedOut, (req, res, next) => {
   const { username, email, password } = req.body;
@@ -143,24 +145,11 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     .catch((err) => next(err));
 });
 
-
 // GET /auth/logout
-router.post("/logout",  (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      res.status(500).render("auth/logout", { errorMessage: err.message });
-      return;
-    }
-
-    res.redirect("/");
-  });
-});
-
-//POST /logout
-router.get('logout', (req, res, next) => {
+router.post('/logout', (req, res, next) => {
   req.session.destroy(err => {
     if (err) next(err);
-    res.redirect('/');
+    res.redirect("/");
   });
 });
 
@@ -175,16 +164,8 @@ router.get("/user-profile", isLoggedIn, async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
-
-
-
-
-
-
   
   
-
-
 
 module.exports = router;
 

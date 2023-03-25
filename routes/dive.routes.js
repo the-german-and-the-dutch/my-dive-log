@@ -1,7 +1,7 @@
 const express = require("express");
 const Dive = require("../models/dive.model");
 
-//const isUserLoggedIn = require("../middleware/isLoggedIn");
+const isUserLoggedIn = require("../middleware/isLoggedIn");
 
 const router = express.Router();
 
@@ -24,12 +24,12 @@ router.get("/dive", /*isUserLoggedIn,*/ (req, res, next) => {
 });
 
 // Create dive form
-router.get("/dive/create", /*isUserLoggedIn,*/ (req, res, next) => {
+router.get("/dive/create", isUserLoggedIn, (req, res, next) => {
   res.render("dive/dive-create");
 });
 
 // Post dive form
-router.post("/dive", async /*isUserLoggedIn,*/ (req, res, next) => {
+router.post("/dive",  isUserLoggedIn, async (req, res, next) => {
   const diveDetails = {
     username: req.body.username,
     location: req.body.location,
