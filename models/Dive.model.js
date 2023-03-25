@@ -5,7 +5,7 @@ const diveSchema = new Schema(
     {   
         username: {
             type: Schema.Types.ObjectId,
-            ref: 'User'
+            ref: 'username'
           },
         location: {
             type: String,
@@ -20,12 +20,11 @@ const diveSchema = new Schema(
             type: Number,
             required: false,
         }, 
-        timeIn: Number,
-        timeOut: Number,
+        timeIn: String,
+        timeOut: String,
         bottomTime: Number, //calculate time ref: timeIn+timeOut
         depth: {
             type: Number,
-            required: true,
         },
         airStart: Number, 
         airEnd: Number,

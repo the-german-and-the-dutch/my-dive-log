@@ -9,13 +9,12 @@ const router = express.Router();
 
 router.get("/dive", /**/ (req, res, next) => {
   Dive.find()
-    .populate("user")
+    .populate("username")
     .then((diveArr) => {
       const data = {
         dive: diveArr,
       };
 
-      res.render("dive/dive", data);
       res.render("dive/dive", data);
     })
     .catch((e) => {
@@ -26,8 +25,7 @@ router.get("/dive", /**/ (req, res, next) => {
 
 // Create dive form
 router.get("/dive/create", /*isUserLoggedIn,*/ (req, res, next) => {
-  res.send("hello");
-  //res.render("dive/create");
+  res.render("dive/dive-create");
 });
 
 // Post dive form

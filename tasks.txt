@@ -57,10 +57,10 @@ Views:
     []- homepage/index
     
     []- logbook view
-        []- create 
-        []- details
-        []- edit
-        []- list all logs by user
+        [x]- create 
+        []- details, whole thing
+        []- edit, make it pre valued
+        []- list all logs by user, whole thing
 
     []- authentication
         []- log in/out
