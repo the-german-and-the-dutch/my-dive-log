@@ -7,7 +7,7 @@ const router = express.Router();
 
 //Get display dive
 
-router.get("/dive", /**/ (req, res, next) => {
+router.get("/dive", /*isUserLoggedIn,*/ (req, res, next) => {
   Dive.find()
     .populate("username")
     .then((diveArr) => {

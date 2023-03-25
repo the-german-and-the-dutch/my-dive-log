@@ -58,12 +58,12 @@ Views:
     
     []- logbook view
         [x]- create 
-        []- details, whole thing
+        [x]- details, whole thing
         []- edit, make it pre valued
         []- list all logs by user, whole thing
-
+        []- view that shows other users logs. BONUS
     []- authentication
-        []- log in/out
+        []- log in/outstatus
         []- register
 
     []- error 

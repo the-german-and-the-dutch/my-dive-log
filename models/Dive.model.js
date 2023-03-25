@@ -5,7 +5,7 @@ const diveSchema = new Schema(
     {   
         username: {
             type: Schema.Types.ObjectId,
-            ref: 'username'
+            ref: 'user'
           },
         location: {
             type: String,
