@@ -81,6 +81,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
     });
 });
 
+
 // GET /auth/login
 router.get("/login", isLoggedOut, (req, res) => {
   res.render("auth/login");
@@ -109,7 +110,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   }
 
   // Search the database for a user with the email submitted in the form
-  User.findOne({ email })
+  User.findOne({ username: username, email: email })
     .then((user) => {
       // If the user isn't found, send an error message that user provided wrong credentials
       if (!user) {
@@ -126,7 +127,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           if (!isSamePassword) {
             res
               .status(400)
-              .render("auth/login", { errorMessage: "Wrong credentials." });
+              .render("auth/user-profile", { errorMessage: "Wrong credentials." });
             return;
           }
 
@@ -135,15 +136,16 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           // Remove the password field
           delete req.session.currentUser.password;
 
-          res.redirect("/");
+          res.redirect("/auth/user-profile");
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
     })
     .catch((err) => next(err));
 });
 
+
 // GET /auth/logout
-router.get("/logout", isLoggedIn, (req, res) => {
+router.post("/logout",  (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       res.status(500).render("auth/logout", { errorMessage: err.message });
@@ -153,6 +155,36 @@ router.get("/logout", isLoggedIn, (req, res) => {
     res.redirect("/");
   });
 });
+
+//POST /logout
+router.get('logout', (req, res, next) => {
+  req.session.destroy(err => {
+    if (err) next(err);
+    res.redirect('/');
+  });
+});
+
+
+//GET user-profile
+router.get("/user-profile", isLoggedIn, async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    res.render("auth/user-profile", { user: req.session.currentUser });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+});
+
+
+
+
+
+
+  
+  
+
+
 
 module.exports = router;
 

@@ -29,7 +29,7 @@ router.get("/dive/create", /*isUserLoggedIn,*/ (req, res, next) => {
 });
 
 // Post dive form
-router.post("/dive", /*isUserLoggedIn,*/ (req, res, next) => {
+router.post("/dive", async /*isUserLoggedIn,*/ (req, res, next) => {
   const diveDetails = {
     username: req.body.username,
     location: req.body.location,
@@ -47,7 +47,7 @@ router.post("/dive", /*isUserLoggedIn,*/ (req, res, next) => {
 
   Dive.create(diveDetails)
     .then((diveFromDB) => {
-      res.redirect("dive/dive");
+      res.redirect("dive");
     })
     .catch((e) => {
       console.log("error creating new dive", e);
@@ -68,7 +68,7 @@ router.get("/dive/:diveId", (req, res, next) =>{
 
     console.log(diveDetails)
 
-    res.render("dive/dive-details", diveDetails);
+    res.render("dive/dive-details", { diveDetails });
   })
   .catch(e => {
     console.log("error getting dive details from DB", e);

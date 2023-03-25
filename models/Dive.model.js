@@ -13,8 +13,10 @@ const diveSchema = new Schema(
             unique: false,
         },
         date: {
-            type: Date,
+            type: Date, 
+            default: Date.now,
             required: true,
+            get: (value) => value.toDateString()
         },
         diveNumber: {
             type: Number,
@@ -22,17 +24,17 @@ const diveSchema = new Schema(
         }, 
         timeIn: String,
         timeOut: String,
-        bottomTime: Number, //calculate time ref: timeIn+timeOut
+        bottomTime: String, //calculate time ref: timeIn+timeOut
         depth: {
             type: Number,
         },
         airStart: Number, 
         airEnd: Number,
-        visibility: String, 
         comment: {
             type: String,
             required: true,
         },
+        visibility: String,
         },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`
