@@ -46,7 +46,7 @@ Route:
         [x]- get user profile
             [x]- session 
 
-    []- list of logs
+    [x]- list of logs
         []- display list
             []- get
 
@@ -59,12 +59,12 @@ Views:
     []- logbook view
         [x]- create 
         [x]- details, whole thing
-        []- edit, make it pre valued
+        [x]- edit, make it pre valued
         []- list all logs by user, whole thing
         []- view that shows other users logs. BONUS
-    []- authentication
+    [x]- authentication
         []- log in/outstatus
-        []- register
+        [x]- register
 
     []- error 
         []- error
