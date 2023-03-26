@@ -81,7 +81,7 @@ router.get("/dive/:diveId/dive-details", /*isUserLoggedIn,*/ (req, res, next) =>
     const data = {
       dive: diveFromDB,
     }
-    res.render("/dive/dive-details", data);
+    res.render("dive/dive-details", data);
     console.log( req.params.diveId)
   })
   .catch(error => next(error));
@@ -89,7 +89,7 @@ router.get("/dive/:diveId/dive-details", /*isUserLoggedIn,*/ (req, res, next) =>
 
 // Uptade process form
 router.post("/dive/:diveId/dive-details", /*isUserLoggedIn,*/ (req, res, next) => {
-  const dive_Id = req.params.diveId;
+  const diveId = req.params.diveId;
   const { username, location, date, diveNumber, timeIn, timeOut, bottomTime, depth, airStart, airEnd, visibility, comment } = req.body;
 
   Dive.findByIdAndUpdate(diveId, { username, location, date, diveNumber, timeIn, timeOut, bottomTime, depth, airStart, airEnd, visibility, comment }, { new: true })
