@@ -1,6 +1,6 @@
 <h1>Hello {{user.username}} create a new dive log </h1>
 
-<form method="post" action="/dive-create">
+<form method="post" action="/dive">
     <label>
         Location:
         <input type="text" name="location" />
@@ -36,19 +36,18 @@
         Air end:
         <input type="number" name="airEnd">
     </label>
-    <form method="post">
-        <label for="visibility">Visibility:</label>
-        <select name="visibility" id="visibility">
-            <option value="Very Good">Very Good</option>
-            <option value="Good">Good</option>
-            <option value="Okay">Okay</option>
-            <option value="Bad">Bad</option>
-            <option value="Very Bad">Very Bad</option>
-        </select>
+    <label for="visibility">Visibility:</label>
+    <select name="visibility" id="visibility">
+        <option value="Very Good">Very Good</option>
+        <option value="Good">Good</option>
+        <option value="Okay">Okay</option>
+        <option value="Bad">Bad</option>
+        <option value="Very Bad">Very Bad</option>
+    </select>
         
-        <label>
-            Comment:
-            <textarea name="comment" cols="30" rows="4"> </textarea>
-        </label>
-        <input type="submit" value="Create dive log"> </input>
-    </form>
+    <label>
+        Comment:
+        <textarea name="comment" cols="30" rows="3"> </textarea>
+    </label>
+    <input type="submit" value="Create dive log">
+</form>

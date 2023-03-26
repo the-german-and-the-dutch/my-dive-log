@@ -30,6 +30,7 @@ router.get("/dive/create", isUserLoggedIn, (req, res, next) => {
 
 // Post dive form
 router.post("/dive",  isUserLoggedIn, async (req, res, next) => {
+  console.log("creating form");
   const diveDetails = {
     username: req.body.username,
     location: req.body.location,
@@ -66,14 +67,14 @@ router.get('/dive/:id/details', function(req, res) {
       console.log(err);
     } else {
       
-      res.render('dive/dive-details', { dive: dive });
+      res.render('dive/dive-create', { dive: dive });
     }
   });
 });
 
 
 // Update Dive details
-router.get("/dive/:diveId/dive-details", /*isUserLoggedIn,*/ (req, res, next) =>{
+router.get("/dive/:diveId/dive-details", isUserLoggedIn, (req, res, next) =>{
   const  diveId  = req.params.diveId;
 
   Dive.findById(diveId)
@@ -88,13 +89,26 @@ router.get("/dive/:diveId/dive-details", /*isUserLoggedIn,*/ (req, res, next) =>
 });
 
 // Uptade process form
-router.post("/dive/:diveId/dive-details", /*isUserLoggedIn,*/ (req, res, next) => {
+router.post("/dive/:diveId/dive-details", isUserLoggedIn, (req, res, next) => {
   const diveId = req.params.diveId;
   const { username, location, date, diveNumber, timeIn, timeOut, bottomTime, depth, airStart, airEnd, visibility, comment } = req.body;
 
   Dive.findByIdAndUpdate(diveId, { username, location, date, diveNumber, timeIn, timeOut, bottomTime, depth, airStart, airEnd, visibility, comment }, { new: true })
   .then(updateDive => {
-    res.redirect(`/dive/${updateDive.id}`); //redirects to dive details page
+    res.redirect("/dive"); //redirects to dive details page
+  })
+  .catch(error => next(error));
+});
+
+
+
+// Get updated form
+router.get("/dive/:diveId/dive-details", isUserLoggedIn, (req, res, next) => {
+  const diveId = req.params.diveId;
+  
+  Dive.findById(diveId)
+  .then(dive => {
+    res.render(`dive/dive-details`, { dive });
   })
   .catch(error => next(error));
 });
@@ -105,7 +119,7 @@ router.post("/dive/:diveId/delete", /*isUserLoggedIn,*/ (req, res, next) => {
   const { dive_Id } = req.params;
 
   Dive.findByIdAndDelete(diveId)
-  .then(() => res.redirect("/dive"))
+  .then(() => res.redirect("/dive/dive-details"))
   .catch(error => next(error));
 });
 

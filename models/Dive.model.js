@@ -32,7 +32,7 @@ const diveSchema = new Schema(
         airEnd: Number,
         comment: {
             type: String,
-            required: true,
+            required: false,
         },
         visibility: String,
         },
