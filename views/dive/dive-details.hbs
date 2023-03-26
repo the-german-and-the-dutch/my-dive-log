@@ -1,18 +1,62 @@
-<h1>Dive Details</h1>
 
-<h2>Dive on {{date}}</h2>
-<ul>
-    <li>Location {{location}} </li>
-    <li>Dive number {{diveNumber}}</li>
-    <li>Time in {{timeIn}} </li>
-    <li>Time out {{timeOut}} </li>
-    <li> Bottom time {{bottomTime}} </li>
-    <li> Depth {{depth}} </li>
-    <li>Air start {{airStart}} </li>
-    <li>Air end {{airEnd}} </li>
-    <li> Visibility {{visibility}} </li>
-</ul>
 
-<p> {{comment}}</p>
+<h1>Dive Edit {{dives._id}} </h1>
 
-<a href="/dive"> go back</a>
+<form method="post" action="/dive/{{dive._id}}/edit">
+    <label>
+        Location: 
+        <input type="text" name="location" value="{{dive.dive.location}}" />
+    </label>
+    <label>
+        Date:
+        <input type="date" name="date" value="{{ dive.date }}"/>
+    </label>
+    <label>
+        Dive number:
+        <input type="number" name="diveNumber" value="{{ dive.diveNumber }}"/>
+    </label>
+
+    <label> time in:
+        <input type="time" name="timeIn" value="{{ dive.timeIn }}">
+    </label>
+    <label> time out:
+        <input type="time" name="timeOut" value="{{ dive.timeOut }}">
+    </label>
+    <label>
+        Bottom time:
+        <input type="number" name="bottomTime" value="{{ dive.bottomTime }}">
+    </label>
+    <label>
+        Depth:
+        <input type="number" name="depth" value="{{ dive.depth }}">
+    </label>
+    <label>
+        Air start:
+        <input type="number" name="airStart" value="{{ dive.airStart }}">
+    </label>
+    <label>
+        Air end:
+        <input type="number" name="airEnd" value="{{ dive.airEnd }}">
+    </label>
+    <form method="post">
+        <label for="visibility">Visibility:</label>
+        <select name="visibility" id="visibility">
+            <option value="Very Good">Very Good</option>
+            <option value="Good">Good</option>
+            <option value="Okay">Okay</option>
+            <option value="Bad">Bad</option>
+            <option value="Very Bad">Very Bad</option>
+        </select>
+        
+        <label>
+            Comment:
+            <textarea name="comment" cols="30" rows="4"> {{dive.comment}} </textarea>
+        </label>
+        <input type="submit" value="Create log"> </input>
+        <input type="submit" value="DELETE"> </input>
+    </form>
+
+
+
+
+<a href="/dive"> go back</a> 

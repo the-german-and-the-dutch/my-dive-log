@@ -1,5 +1,5 @@
 
-<h1>Hello {{ user.username }}</h1>
+<h1>Diver Logbook {{ user.username }}</h1>
 {{#each this.dive}}
 
 
@@ -8,7 +8,8 @@
 
 <h3>Dive on {{ date }}</h3>
 <ul>
-    <li>Location: {{ location }} </li>
+    <li>Location: {{ .location }} </li>
+    <li>Date: {{ .date }}</li>
     <li>Dive number: {{ diveNumber }}</li>
     <li>Time-in: {{ timeIn }} </li>
     <li>Time-out: {{ timeOut }} </li>
@@ -23,6 +24,8 @@
 
 
 <a href="/"> go back</a>
+
+<a href="dive/{{this.id}}/dive-details"> Edit</a>
 
 
 

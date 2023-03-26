@@ -58,51 +58,38 @@ router.post("/dive",  isUserLoggedIn, async (req, res, next) => {
 
 
 // READ Dive details
-router.get("/dive/:diveId", (req, res, next) =>{
 
-  const { diveId } = req.params;
-
-  Dive.findById(diveId)
-  .populate("user")
-  .then(diveDetails => {
-
-    console.log(diveDetails)
-
-    res.render("dive/dive-details", { diveDetails });
-  })
-  .catch(e => {
-    console.log("error getting dive details from DB", e);
-    next(e);
+router.get('/dive/:id/details', function(req, res) {
+  
+  Dive.findById(req.params.id, function(err, dive) {
+    if (err) {
+      console.log(err);
+    } else {
+      
+      res.render('dive/dive-details', { dive: dive });
+    }
   });
 });
 
-// Update Dive details
-router.get("/dive/:diveId/edit", /*isUserLoggedIn,*/ (req, res, next) =>{
-  const { diveId } = req.params;
 
-  let diveDetails;
+// Update Dive details
+router.get("/dive/:diveId/dive-details", /*isUserLoggedIn,*/ (req, res, next) =>{
+  const  diveId  = req.params.diveId;
 
   Dive.findById(diveId)
   .then(diveFromDB => {
-    diveDetails = diveFromDB;
-    return User.find();
-  })
-  .then( diveArr => {
-
     const data = {
-      dive: diveDetails,
+      dive: diveFromDB,
     }
-
-    res.render("dive/dive-edit.hbs", data);
+    res.render("/dive/dive-details", data);
+    console.log( req.params.diveId)
   })
   .catch(error => next(error));
 });
 
-
-
 // Uptade process form
-router.post("/dive/:diveId/edit", /*isUserLoggedIn,*/ (req, res, next) => {
-  const { diveId } = req.params;
+router.post("/dive/:diveId/dive-details", /*isUserLoggedIn,*/ (req, res, next) => {
+  const dive_Id = req.params.diveId;
   const { username, location, date, diveNumber, timeIn, timeOut, bottomTime, depth, airStart, airEnd, visibility, comment } = req.body;
 
   Dive.findByIdAndUpdate(diveId, { username, location, date, diveNumber, timeIn, timeOut, bottomTime, depth, airStart, airEnd, visibility, comment }, { new: true })
@@ -115,7 +102,7 @@ router.post("/dive/:diveId/edit", /*isUserLoggedIn,*/ (req, res, next) => {
 
 // Delete
 router.post("/dive/:diveId/delete", /*isUserLoggedIn,*/ (req, res, next) => {
-  const { diveId } = req.params;
+  const { dive_Id } = req.params;
 
   Dive.findByIdAndDelete(diveId)
   .then(() => res.redirect("/dive"))

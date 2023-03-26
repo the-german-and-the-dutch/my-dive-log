@@ -1,8 +1,8 @@
-<h1>Hello {{user.username}} create a new dive log </h1>
+<h1>Hello {{user.username}} </h1>
 
-<form method="post" action="/dive-create">
+<form method="post" action="/dive">
     <label>
-        Location:
+        Location: {{dive.location}}
         <input type="text" name="location" />
     </label>
     <label>
@@ -50,5 +50,5 @@
             Comment:
             <textarea name="comment" cols="30" rows="4"> </textarea>
         </label>
-        <input type="submit" value="Create dive log"> </input>
+        <input type="submit" value="Create log"> </input>
     </form>
