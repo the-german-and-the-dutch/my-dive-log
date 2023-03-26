@@ -1,11 +1,11 @@
 
 
-<h1>Dive Edit {{dives._id}} </h1>
+<h1>Dive Edit {{dive._id}} </h1>
 
-<form method="post" action="/dive/{{dive._id}}/edit">
+<form method="post" action="/dive/{{dive._id}}/dive-details">
     <label>
         Location: 
-        <input type="text" name="location" value="{{dive.dive.location}}" />
+        <input type="text" name="location" value="{{ dive.location }}" />
     </label>
     <label>
         Date:
@@ -38,7 +38,7 @@
         Air end:
         <input type="number" name="airEnd" value="{{ dive.airEnd }}">
     </label>
-    <form method="post">
+    
         <label for="visibility">Visibility:</label>
         <select name="visibility" id="visibility">
             <option value="Very Good">Very Good</option>
@@ -52,11 +52,11 @@
             Comment:
             <textarea name="comment" cols="30" rows="4"> {{dive.comment}} </textarea>
         </label>
-        
+        <input type="submit" value="Submit Changes"> </input>
         <input type="submit" value="DELETE"> </input>
-    </form>
-        <form method="post" action="/dive">
-    <input type="submit" value="Submit Changes"> </input>
+    
+        <form method="post" action="/dive/{{dive._id}}/dive-details">
+   
     </form>
 
 

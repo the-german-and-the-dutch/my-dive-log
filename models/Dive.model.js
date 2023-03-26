@@ -14,9 +14,9 @@ const diveSchema = new Schema(
         },
         date: {
             type: Date, 
-            default: Date.now,
-            required: true,
-            get: (value) => value.toDateString()
+            default: Date.now, 
+            require: true,
+            
         },
         diveNumber: {
             type: Number,
