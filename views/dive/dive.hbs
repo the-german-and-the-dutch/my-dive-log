@@ -1,5 +1,5 @@
 
-<h1>Diver Logbook {{ user.username }}</h1>
+<h1>Dive Logbook {{ user.username }}</h1>
 {{#each this.dive}}
 
 
@@ -13,8 +13,8 @@
     <li>Dive number: {{ diveNumber }}</li>
     <li>Time-in: {{ timeIn }} </li>
     <li>Time-out: {{ timeOut }} </li>
-    <li> Bottom-time: {{ bottomTime }} min </li>
-    <li> Depth: {{ depth }} meters</li>
+    <li>Bottom-time: {{ bottomTime }} min </li>
+    <li>Depth: {{ depth }} meters</li>
     <li>Air-start: {{ airStart }} Psi </li>
     <li>Air-end: {{ airEnd }} Psi</li>
     <li>Visibility: {{ visibility }} </li>
@@ -25,7 +25,8 @@
 
 <a href="/"> go back</a>
 
-<a href="/dive/{{this.id}}/dive-details"> Edit</a>
+<a href="/dive/{{this.id}}/dive-details"> Details</a>
+<a href="/dive/{{this.id}}/dive-edit"> Edit</a>
 
 
 

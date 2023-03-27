@@ -72,7 +72,7 @@ router.get("/dive/:id/details", function (req, res) {
 });
 
 // Update Dive details
-router.get("/dive/:diveId/dive-details", isUserLoggedIn, (req, res, next) => {
+router.get("/dive/:diveId/dive-edit", isUserLoggedIn, (req, res, next) => {
   const diveId = req.params.diveId;
 
   Dive.findById(diveId)
@@ -141,15 +141,13 @@ router.get("/dive/:diveId/dive-details", isUserLoggedIn, (req, res, next) => {
 });
 
 // Delete
-router.post(
-  "/dive/:diveId/delete",
-  /*isUserLoggedIn,*/ (req, res, next) => {
+router.post("/dive/:diveId/delete",/*isUserLoggedIn,*/ (req, res, next) => {
     const { diveId } = req.params;
 
     Dive.findByIdAndDelete(diveId)
       .then(() => res.redirect("/dive"))
       .catch((error) => next(error));
-  }
-);
+  
+    });
 
 module.exports = router;
