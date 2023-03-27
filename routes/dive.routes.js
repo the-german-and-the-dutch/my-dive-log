@@ -1,17 +1,17 @@
 const express = require("express");
 const Dive = require("../models/dive.model");
-
+const User = require("../models/User.model");
 const isUserLoggedIn = require("../middleware/isLoggedIn");
 
 const router = express.Router();
 
-//Get display dive
+//display global dive log
 
 router.get(
   "/dive",
   /*isUserLoggedIn,*/ (req, res, next) => {
     Dive.find()
-      .populate("username")
+    .populate("username")
       .then((diveArr) => {
         const data = {
           dive: diveArr,
@@ -26,15 +26,32 @@ router.get(
   }
 );
 
+// display users logbook
+router.get("/dive/my-logbook", /*isUserLoggedIn,*/ (req, res, next) => {
+    
+
+        res.render("dive/my-logbook");
+      })
+      
+    
+
 // Create dive form
 router.get("/dive/create", isUserLoggedIn, (req, res, next) => {
-  res.render("dive/dive-create");
+
+  User.findById(req.session.currentUser._id)
+  .then(user=>{
+    console.log(user._id)
+    res.render("dive/dive-create", user);
+  })
+  
+  
 });
 
 // Post dive form
 router.post("/dive", isUserLoggedIn, async (req, res, next) => {
   console.log(".............creating form..............");
   const diveDetails = {
+    userId:req.body.userId,
     username: req.body.username,
     location: req.body.location,
     date: req.body.date,

@@ -1,6 +1,12 @@
-<h1>Hello {{user.username}} create a new dive log </h1>
+
+
+<h1>Hello {{username}} create a new dive log </h1>
 
 <form method="post" action="/dive">
+   <label>
+        <input type="hidden" name="userId" value="{{ _id }}" >
+    </label>
+
     <label>
         Location:
         <input type="text" name="location" />
