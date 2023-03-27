@@ -80,7 +80,7 @@ router.get("/dive/:diveId/dive-edit", isUserLoggedIn, (req, res, next) => {
       const data = {
         dive: diveFromDB,
       };
-      res.render("dive/dive-details", data);
+      res.render("dive/dive-edit", data);
       console.log(req.params.diveId);
     })
     .catch((error) => next(error));
@@ -143,11 +143,16 @@ router.get("/dive/:diveId/dive-details", isUserLoggedIn, (req, res, next) => {
 // Delete
 router.post("/dive/:diveId/delete",/*isUserLoggedIn,*/ (req, res, next) => {
     const { diveId } = req.params;
-
+    console.log("DELETING DIVE WITH ID:", diveId);
     Dive.findByIdAndDelete(diveId)
-      .then(() => res.redirect("/dive"))
-      .catch((error) => next(error));
-  
+      .then(() => {
+        console.log("Dive deleted sucessfully!");
+        res.redirect("/dive");
+      })
+      .catch((error) => {
+        console.log("Error deleting Dive", error);
+       next(error);
+      })
     });
 
 module.exports = router;
