@@ -80,7 +80,7 @@ router.get("/dive/:diveId/dive-edit", isUserLoggedIn, (req, res, next) => {
       const data = {
         dive: diveFromDB,
       };
-      res.render("dive/dive-details", data);
+      res.render("dive/dive-edit", data);
       console.log(req.params.diveId);
     })
     .catch((error) => next(error));
@@ -142,12 +142,16 @@ router.get("/dive/:diveId/dive-details", isUserLoggedIn, (req, res, next) => {
 
 // Delete
 router.post("/dive/:diveId/delete",/*isUserLoggedIn,*/ (req, res, next) => {
-    const { diveId } = req.params;
+  const { diveId } = req.params;
 
-    Dive.findByIdAndDelete(diveId)
-      .then(() => res.redirect("/dive"))
-      .catch((error) => next(error));
-  
-    });
+  if (req.body._method === "DELETE") {
+      Dive.findByIdAndDelete(diveId)
+          .then(() => res.redirect("/dive"))
+          .catch((error) => next(error));
+  } else {
+      // Handle invalid request method
+      res.status(405).send("Method Not Allowed");
+  }
+});
 
 module.exports = router;

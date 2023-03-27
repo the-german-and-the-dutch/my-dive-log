@@ -58,9 +58,16 @@
         <textarea name="comment" cols="30" rows="4"> {{dive.comment}} </textarea>
     </label>
     <input type="submit" value="Submit Changes"> </input>
-    <input type="submit" value="DELETE"> </input>
-    <form method="post" action="/dive/{{dive._id}}/dive-details">
+   
     </form>
 
 
     <a href="/dive"> go back</a>
+   
+   
+
+
+<form method="post" action="/dive/{{dive._id}}/delete">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit">Delete</button>
+    </form>
