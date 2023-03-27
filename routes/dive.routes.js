@@ -28,10 +28,17 @@ router.get(
 
 // display users logbook
 router.get("/dive/my-logbook", /*isUserLoggedIn,*/ (req, res, next) => {
-    
-
-        res.render("dive/my-logbook");
-      })
+ 
+  Dive.find({userId :req.session.currentUser._id})
+  
+    .then(divesArr =>{
+      const data = {
+        dive: divesArr,
+      };
+      
+      res.render("dive/my-logbook", data);
+    })
+})
       
     
 
@@ -40,11 +47,8 @@ router.get("/dive/create", isUserLoggedIn, (req, res, next) => {
 
   User.findById(req.session.currentUser._id)
   .then(user=>{
-    console.log(user._id)
     res.render("dive/dive-create", user);
   })
-  
-  
 });
 
 // Post dive form
