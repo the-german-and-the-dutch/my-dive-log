@@ -143,8 +143,8 @@ router.get("/dive/:diveId/dive-details", isUserLoggedIn, (req, res, next) => {
 // Delete
 router.post("/dive/:diveId/delete",/*isUserLoggedIn,*/ (req, res, next) => {
   const { diveId } = req.params;
-
-  if (req.body._method === "DELETE") {
+ console.log("req.body", req.body)
+  if (req.body.deleteMethod === "DELETE") {
       Dive.findByIdAndDelete(diveId)
           .then(() => res.redirect("/dive"))
           .catch((error) => next(error));
