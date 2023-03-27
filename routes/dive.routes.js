@@ -87,7 +87,7 @@ router.get("/dive/:diveId/dive-edit", isUserLoggedIn, (req, res, next) => {
 });
 
 // Uptade process form
-router.post("/dive/:diveId/dive-details", isUserLoggedIn, (req, res, next) => {
+router.post("/dive/:diveId/dive-edit", isUserLoggedIn, (req, res, next) => {
   console.log(req.body);
   const diveId = req.params.diveId;
   const {

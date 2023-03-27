@@ -2,53 +2,25 @@
 
 <h1>Dive details {{dive._id}} </h1>
 
+<form method="post" action="/dive/{{dive._id}}/dive-details">
 
-        Location: {{ dive.location }}
-        Date:{{ dive.date }}
-        Dive number:{{ dive.diveNumber }}
+    <h3>Dive on {{ dive.date }}</h3>
 
-    <label> time in:
-        <input type="time" name="timeIn" value="{{ dive.timeIn }}">
-    </label>
-    <label> time out:
-        <input type="time" name="timeOut" value="{{ dive.timeOut }}">
-    </label>
-    <label>
-        Bottom time:
-        <input type="number" name="bottomTime" value="{{ dive.bottomTime }}">
-    </label>
-    <label>
-        Depth:
-        <input type="number" name="depth" value="{{ dive.depth }}">
-    </label>
-    <label>
-        Air start:
-        <input type="number" name="airStart" value="{{ dive.airStart }}">
-    </label>
-    <label>
-        Air end:
-        <input type="number" name="airEnd" value="{{ dive.airEnd }}">
-    </label>
-    
-        <label for="visibility">Visibility:</label>
-        <select name="visibility" id="visibility">
-            <option value="Very Good">Very Good</option>
-            <option value="Good">Good</option>
-            <option value="Okay">Okay</option>
-            <option value="Bad">Bad</option>
-            <option value="Very Bad">Very Bad</option>
-        </select>
-        
-        <label>
-            Comment:
-            <textarea name="comment" cols="30" rows="4"> {{dive.comment}} </textarea>
-        </label>
-        <input type="submit" value="Submit Changes"> </input>
-        <input type="submit" value="DELETE"> </input>
-    
-        <form method="post" action="/dive/{{dive._id}}/dive-details">
-   
-    </form>
+    <ul>
+        <li>Location: {{ dive.location }} </li>
+        <li>Date: {{ dive.date }}</li>
+        <li>Dive number: {{ dive.diveNumber }}</li>
+        <li>Time-in: {{ dive.timeIn }} </li>
+        <li>Time-out: {{ dive.timeOut }} </li>
+        <li>Bottom-time: {{ dive.bottomTime }} min </li>
+        <li>Depth: {{ dive.depth }} meters</li>
+        <li>Air-start: {{ dive.airStart }} Psi </li>
+        <li>Air-end: {{ dive.airEnd }} Psi</li>
+        <li>Visibility: {{ dive.visibility }} </li>
+        <p> {{ dive.comment }}</p>
+    </ul>
+
+</form>
 
 
-<a href="/dive"> go back</a> 
+<a href="/dive"> go back</a>
