@@ -87,7 +87,7 @@ router.get("/dive/:diveId/dive-edit", isUserLoggedIn, (req, res, next) => {
 });
 
 // Uptade process form
-router.post("/dive/:diveId/dive-details", isUserLoggedIn, (req, res, next) => {
+router.post("/dive/:diveId/dive-edit", isUserLoggedIn, (req, res, next) => {
   console.log(req.body);
   const diveId = req.params.diveId;
   const {
@@ -141,18 +141,18 @@ router.get("/dive/:diveId/dive-details", isUserLoggedIn, (req, res, next) => {
 });
 
 // Delete
-router.post("/dive/:diveId/delete",/*isUserLoggedIn,*/ (req, res, next) => {
-    const { diveId } = req.params;
-    console.log("DELETING DIVE WITH ID:", diveId);
-    Dive.findByIdAndDelete(diveId)
-      .then(() => {
-        console.log("Dive deleted sucessfully!");
-        res.redirect("/dive");
-      })
-      .catch((error) => {
-        console.log("Error deleting Dive", error);
-       next(error);
-      })
+router.post("/dive/:diveId/delete", isUserLoggedIn, (req, res, next) => {
+  const { diveId } = req.params;
+  console.log("DELETING DIVE WITH ID:", diveId);
+  Dive.findByIdAndDelete(diveId)
+    .then(() => {
+      console.log("Dive deleted sucessfully!");
+      res.redirect("/dive");
+    })
+    .catch((error) => {
+      console.log("Error deleting Dive", error);
+      next(error);
     });
+});
 
 module.exports = router;
