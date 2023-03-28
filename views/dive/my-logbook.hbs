@@ -1,31 +1,51 @@
+
+
+
+
+
+<link rel="stylesheet" href="/stylesheets/myLogbookStylesheet.css" />
+
+<h2 class=" title pb-2 border-bottom">My logbook</h2>
 {{#each this.dive}}
+<div class="container py-5" id="custom-cards">
 
-
-
-<h2>Dive Details:</h2>
-
-<h3>Dive on {{ date }}</h3>
-<ul>
-    <li>Location: {{ location }} </li>
-    <li>Date: {{ date }}</li>
-    <li>Dive number: {{ diveNumber }}</li>
-    <li>Time-in: {{ timeIn }} </li>
-    <li>Time-out: {{ timeOut }} </li>
-    <li>Bottom-time: {{ bottomTime }} min </li>
-    <li>Depth: {{ depth }} meters</li>
-    <li>Air-start: {{ airStart }} Psi </li>
-    <li>Air-end: {{ airEnd }} Psi</li>
-    <li>Visibility: {{ visibility }} </li>
-    <p> {{ comment }}</p>
-</ul>
-
-
-
-<a href="/"> go back</a>
-
-<a href="/dive/{{this.id}}/dive-details"> Details</a>
-<a href="/dive/{{this.id}}/dive-edit"> Edit</a>
-
-
+    <div class="row">
+      <div class="col-12">
+        <div class=" card card-cover  text-white rounded-5 shadow-lg" style="background-image: url('../images/portfolio/dark-turtle.jpeg')">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h4 class="fw-bold">{{date}}</h4>
+            <ul>
+            <li>Dive number: {{ diveNumber }}</li>
+            <li>Time-in: {{ timeIn }} </li>
+            <li>Time-out: {{ timeOut }} </li>
+            <li>Bottom-time: {{ bottomTime }} min </li>
+            <li>Depth: {{ depth }} meters</li>
+            <li>Air-start: {{ airStart }} Psi </li>
+            <li>Air-end: {{ airEnd }} Psi</li>
+            <li>Visibility: {{ visibility }} </li>
+            </ul>
+            <p> {{ comment }}</p>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <img class="bi " width="1em" height="1em"> <use xlink:href="#geo-fill"></use></svg>
+                <small>{{location}}</small>
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi " width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>{{username}}</small>
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <a  href="/dive/{{this.id}}/dive-details"> Details</a>
+              </li>
+              <li class="d-flex align-items-center">
+                <a href="/dive/{{this.id}}/dive-edit"> Edit</a>
+              </li>
+             </ul>
+          </div>
+        </div>
+      </div>
 
 {{/each}}

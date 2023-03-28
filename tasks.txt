@@ -47,21 +47,21 @@ Route:
             [x]- session 
 
     [x]- list of logs
-        []- display list
+        [x]- display list
             []- get
 
 
 Views: 
     []- layout
         []- nav
-    []- homepage/index
+    [x]- homepage/index
     
     []- logbook view
         [x]- create 
         [x]- details, whole thing
         [x]- edit, make it pre valued
-        []- list all logs by user, whole thing
-        []- view that shows other users logs. BONUS
+        [x]- list all logs by user, whole thing
+        [x]- view that shows other users logs. BONUS
     [x]- authentication
         []- log in/outstatus
         [x]- register

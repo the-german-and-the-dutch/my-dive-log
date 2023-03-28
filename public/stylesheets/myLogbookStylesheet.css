@@ -1,0 +1,16 @@
+
+.title{
+    margin-top: 10vh;
+    margin-left: 40px;
+}
+
+ul{
+    list-style: none;
+}
+
+.card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover ;
+}
+
