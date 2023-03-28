@@ -1,0 +1,11 @@
+body {
+    color: aliceblue;
+}
+
+.form-group {
+    opacity: 80%;
+}
+#submitBtn {
+    margin-top: 35px;
+    margin-bottom: 80px;
+}
