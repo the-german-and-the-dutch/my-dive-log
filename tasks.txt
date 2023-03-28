@@ -69,3 +69,8 @@ Views:
     []- error 
         []- error
         []- not found
+
+Bugs to fix:
+    [] - Nav bar in ecery view
+    [] - Double login
+            
