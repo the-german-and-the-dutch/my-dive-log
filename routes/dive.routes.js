@@ -58,7 +58,7 @@ router.post("/dive", isUserLoggedIn, async (req, res, next) => {
     userId:req.body.userId,
     username: req.body.username,
     location: req.body.location,
-    date: req.body.date,
+    date: new Date(req.body.date).toDateString(),
     diveNumber: req.body.diveNumber,
     timeIn: req.body.timeIn,
     timeOut: req.body.timeOut,

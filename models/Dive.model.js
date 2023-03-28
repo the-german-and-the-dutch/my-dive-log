@@ -16,7 +16,7 @@ const diveSchema = new Schema(
             unique: false,
         },
         date: {
-            type: Date, 
+            type: String, 
             default: Date.now, 
             require: true,
             

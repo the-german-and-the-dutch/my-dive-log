@@ -1,12 +1,11 @@
 
 
 
-
-
 <link rel="stylesheet" href="/stylesheets/myLogbookStylesheet.css" />
 
 <h3 class=" title pb-2 border-bottom">My logbook</h3>
 {{#each this.dive}}
+
 <div class="container py-5" id="custom-cards">
 
     <div class="row">
@@ -16,15 +15,31 @@
             <h4 class="fw-bold">{{date}}</h4>
             <ul>
             <li>Dive number: {{ diveNumber }}</li>
+            {{#if timeIn}}
             <li>Time-in: {{ timeIn }} </li>
+            {{/if}}
+            {{#if timeOut}}
             <li>Time-out: {{ timeOut }} </li>
+            {{/if}}
+            {{#if bottomTime}}
             <li>Bottom-time: {{ bottomTime }} min </li>
+            {{/if}}
+            {{#if depth}}
             <li>Depth: {{ depth }} meters</li>
+            {{/if}}
+            {{#if airStart}}
             <li>Air-start: {{ airStart }} Psi </li>
+            {{/if}}
+            {{#if airEnd}}
             <li>Air-end: {{ airEnd }} Psi</li>
+            {{/if}}
+            {{#if visibility}}
             <li>Visibility: {{ visibility }} </li>
+            {{/if}}
             </ul>
-            <p> {{ comment }}</p>
+            {{#if comment}}
+            <p class="fw-bold"> {{ comment }}</p>
+            {{/if}}
             <ul class="d-flex list-unstyled mt-auto">
               <li class="me-auto">
                 
@@ -47,5 +62,7 @@
           </div>
         </div>
       </div>
+    </div>
+</div>
 
 {{/each}}
