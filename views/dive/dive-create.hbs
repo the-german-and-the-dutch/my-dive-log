@@ -1,15 +1,114 @@
+<section class="d-flex mt-5 justify-content-center" "vh-100 bg-image"  style="background-image: url('../images/reef-login.jpeg'); padding-bottom:0;">
+    <form method="post" action="/dive" class="col-med-12">
+
+        <label>
+            <input type="hidden" name="userId" value="{{ _id }}">
+        </label>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputName">Name</label>
+                    <input type="text" name="name" class="form-control" name="username" id="inputName" placeholder="Name" value="{{ username }}" size="50">
+                </div>    
+
+            <div class="form-group col-md-4">
+                <label for="inputLocation">Location</label>
+                <input type="text" name="location" class="form-control" id="inputLocation" placeholder="Location">
+            </div>
+            
+            <div class="form-group col-md-4">
+                <label for="inputDate">Date</label>
+                <input type="date" name="date" class="form-control" id="inputDate" size="3">
+            </div>
+
+         <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="bottomTime">Dive number</label>
+                <input type="number" name="diveNumber" class="form-control" id="diveNumber">
+            </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputTimeIn">Time in</label>
+                <input type="time" name="timeIn" class="form-control" id="timeIn">
+            </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputTimeOut">Time out</label>
+                <input type="time" name="timeOut" class="form-control" id="timeOut">
+            </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="bottomTime">Bottom time</label>
+                <input type="number" name="bottomTime" class="form-control" id="bottomTime">
+            </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="depth">Depth</label>
+                <input type="number" name="depth" class="form-control" id="depth">
+            </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="airStart">Air start</label>
+                <input type="number" name="airStart" class="form-control" id="airStart">
+            </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="airEnd">Air end</label>
+                <input type="number" name="airEnd" class="form-control" id="airEnd">
+            </div>
+
+        <div class="form-group col-md-4">
+            <label for="inputVisibility">Visibility</label>
+                <select id="inputVisibility" class="form-control" name="visibility">
+                <option selected>Choose...</option>
+                <option value="Very Good">Very Good</option>
+                <option value="Good">Good</option>
+                <option value="Okay">Okay</option>
+                <option value="Bad">Bad</option>
+                <option value="Very Bad">Very Bad</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+    <label for="comment">Comment</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+        
+        <button type="submit" class="btn btn-primary">Create dive log</button>
+    </form>
+</section>
 
 
+
+
+
+
+
+
+
+
+
+
+
+{{!--
 <h1>Hello {{username}} create a new dive log </h1>
 
 <form method="post" action="/dive">
-   <label>
-        <input type="hidden" name="userId" value="{{ _id }}" >
+    <label>
+        <input type="hidden" name="userId" value="{{ _id }}">
     </label>
+
     <label>
         Name:
-        <input type="text" name="username" value="{{ username }}" >
+        <input type="text" name="username" value="{{ username }}">
     </label>
+
     <label>
         Location:
         <input type="text" name="location" />
@@ -53,10 +152,11 @@
         <option value="Bad">Bad</option>
         <option value="Very Bad">Very Bad</option>
     </select>
-        
+
     <label>
         Comment:
         <textarea name="comment" cols="30" rows="3"> </textarea>
     </label>
     <input type="submit" value="Create dive log">
 </form>
+--}}

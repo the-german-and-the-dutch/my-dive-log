@@ -1,5 +1,46 @@
-<h1>Welcome {{ user.username }}</h1>
-<p>This is your profile page</p>
+   <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/UserProfileStyle.css" />
+
+</head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="img-fluid rounded-circle">
+          <h1>{{ user.username }}</h1>
+          <p class="lead">Web Developer</p>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-envelope"></i> john.doe@example.com</li>
+            <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+            <li><i class="fas fa-map-marker-alt"></i> New York, NY</li>
+          </ul>
+        </div>
+        <div class="col-md-8">
+          <h2 class="text-primary" >About Me</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim aliquet nulla eu euismod. Proin finibus consequat odio, ut tristique nisi. Integer eu malesuada lorem. Morbi vel faucibus mauris, ut dapibus orci. Fusce placerat consectetur lectus eu vehicula. Donec volutpat justo in diam porttitor, quis finibus felis imperdiet. Integer sit amet orci id leo gravida congue. Quisque sed augue lacinia, malesuada elit vitae, consequat enim. Vestibulum auctor, leo a lacinia finibus, massa nibh hendrerit lectus, ac fringilla lacus turpis a mi.</p>
+          <h2>Skills</h2>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Bootstrap</li>
+            <li>PHP</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
 
 <button>
     <a href="/auth/user-profile">Reload the page</a>
