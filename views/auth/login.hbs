@@ -1,39 +1,44 @@
-<section id="login-form" class="vh 100 bg-image" style="background-image: url('../images/sharks-portfolio.jpg'); height: 100vh; padding-bottom:0;"></section>
-  <div class="mask d-flex align-items-center h-120 gradient-custom-3">
-    <div class="container h-80">
-      {{!-- <div class="row  d-flex justify-content-center align-items-center h-80"> --}}
-        {{!-- <div class="col-12 col-md-8 col-lg-6 col-xl-4"> --}}
-          {{!-- <div class="card" style="border-radius: 15px; width: 400px; height: 600px; margin-top: 80px; "> --}}
-            {{!-- <div class="card-body p-5"> --}}
+<section id="login" class="vh-100 bg-image"
+  style="background-image: url('../images/reef-login.jpeg'); padding-bottom:0;">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-4">
+          <div class="card shadow-lg border-0 rounded-15" style="width: 400px; height: 600px; margin-top: 80px;">
+            <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Login</h2>
+              <form action="/auth/login" method="POST">
 
+              <div class="form-outline mb-2">
+                <label class="form-label" style="font-size: 14px" >Username</label>
+                <input type="text" name="username" placeholder="Your username" class="form-control form-control-lg" style="font-size: 12px" />
+              </div>
 
-  <form action="/auth/login" method="POST">
+              <div class="form-outline mb-2">
+                <label class="form-label" style="font-size: 14px" >Your Email</label>
+                <input type="email" name="email" placeholder="Your email" class="form-control form-control-lg" style="font-size: 12px" />  
+              </div>
 
-    <label> Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
+              <div class="form-outline mb-2">
+                <label class="form-label" style="font-size: 14px" >Password</label>
+                <input type="password" name="password" placeholder="Your password" class="form-control form-control-lg" style="font-size: 12px" />
+              </div>
 
-    <label> Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
+              <div class="d-flex justify-content-center">
+              <button type="submit" name="login"  style="font-size: 14px" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Log In</button>
+              </div>
 
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" style="font-size: 14px;" />
-    </label>
+              {{#if errorMessage}}
+              <p class="error">{{errorMessage}}</p>
+              {{/if}}
 
-    <button type="submit">Log In</button>
-
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-
-
-    <div class="info">
-        <p id="login">If you don't have an account, click <a href="/auth/signup">here</a> to create one.</p>
-    </div>
-             </form>
+              
+              <hr>
+              <div class="info" style="font-size: 14px; text-align: center;">
+                <p id="login">If you don't have an account, <br> 
+                click <a href="/auth/signup">here</a> to create one.</p>
+              </div>
+              </form>
             </div>
           </div>
         </div>
