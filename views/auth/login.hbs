@@ -1,5 +1,13 @@
-<div id="login-form">
-  <h2>Log In</h2>
+<section id="login-form" class="vh 100 bg-image" style="background-image: url('../images/sharks-portfolio.jpg'); height: 100vh; padding-bottom:0;"></section>
+  <div class="mask d-flex align-items-center h-120 gradient-custom-3">
+    <div class="container h-80">
+      {{!-- <div class="row  d-flex justify-content-center align-items-center h-80"> --}}
+        {{!-- <div class="col-12 col-md-8 col-lg-6 col-xl-4"> --}}
+          {{!-- <div class="card" style="border-radius: 15px; width: 400px; height: 600px; margin-top: 80px; "> --}}
+            {{!-- <div class="card-body p-5"> --}}
+              <h2 class="text-uppercase text-center mb-5">Login</h2>
+
+
   <form action="/auth/login" method="POST">
 
     <label> Username
@@ -11,7 +19,7 @@
     </label>
 
     <label> Password
-      <input type="password" name="password" placeholder="Your password" />
+      <input type="password" name="password" placeholder="Your password" style="font-size: 14px;" />
     </label>
 
     <button type="submit">Log In</button>
@@ -23,7 +31,13 @@
 
 
     <div class="info">
-        <p id="login">If you don't have an account, click <a href="/signup">here</a> to create one.</p>
+        <p id="login">If you don't have an account, click <a href="/auth/signup">here</a> to create one.</p>
     </div>
-  </form>
-</div>
+             </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
