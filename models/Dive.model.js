@@ -8,8 +8,7 @@ const diveSchema = new Schema(
             type: String
           },
         username: {
-            type: Schema.Types.ObjectId,
-            ref: 'User'
+            type: String
           },
         location: {
             type: String,
