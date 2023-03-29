@@ -1,5 +1,5 @@
 const express = require("express");
-const Dive = require("../models/dive.model");
+const Dive = require("../models/Dive.model");
 const User = require("../models/User.model");
 const isUserLoggedIn = require("../middleware/isLoggedIn");
 
