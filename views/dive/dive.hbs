@@ -12,9 +12,12 @@
       <div class="col-12">
         <div class=" card card-cover  text-white rounded-5 shadow-lg" style="background-image: url('../images/portfolio/schoolOfFish-portfolio.jpeg')">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h4 class="fw-bold">{{date}}</h4>
+            <h4 class="fw-bold">{{comment}}</h4>
             <ul>
+            <li>Date: {{ date }}</li>
+            {{#if diveNumber}}
             <li>Dive number: {{ diveNumber }}</li>
+            {{/if}}
             {{#if timeIn}}
             <li>Time-in: {{ timeIn }} </li>
             {{/if}}
@@ -37,9 +40,7 @@
             <li>Visibility: {{ visibility }} </li>
             {{/if}}
             </ul>
-            {{#if comment}}
-            <p class="fw-bold"> {{ comment }}</p>
-            {{/if}}
+            
             <ul class="d-flex list-unstyled mt-auto">
               <li class="me-auto">
                 

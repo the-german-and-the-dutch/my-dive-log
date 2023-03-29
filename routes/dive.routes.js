@@ -13,12 +13,15 @@ router.get(
     Dive.find()
     .populate("username")
       .then((diveArr) => {
+        diveArr.reverse()
+        
         const data = {
           dive: diveArr,
         };
 
         res.render("dive/dive", data);
       })
+    
       .catch((e) => {
         console.log("error getting dives from DB", e);
         next(e);
@@ -32,10 +35,13 @@ router.get("/dive/my-logbook", /*isUserLoggedIn,*/ (req, res, next) => {
   Dive.find({userId :req.session.currentUser._id})
   
     .then(divesArr =>{
+      divesArr.reverse()
+      
       const data = {
         dive: divesArr,
       };
       
+      console.log()
       res.render("dive/my-logbook", data);
     })
 })

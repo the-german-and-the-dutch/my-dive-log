@@ -18,7 +18,7 @@ Models:
         [x]- visibility
         [x]- comment
         Bonus:
-        []- createdBy, reference to user model
+        [x]- createdBy, reference to user model
         []- image
         []- location on maps 
 
@@ -71,6 +71,6 @@ Views:
         []- not found
 
 Bugs to fix:
-    [] - Nav bar in every view
-    [x] - Double login
+    [] - Nav bar in ecery view
+    [] - Double login
             

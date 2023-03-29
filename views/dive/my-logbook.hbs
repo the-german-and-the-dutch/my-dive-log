@@ -12,9 +12,12 @@
       <div class="col-12">
         <div class=" card card-cover  text-white rounded-5 shadow-lg" style="background-image: url('../images/portfolio/dark-turtle.jpeg')">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h4 class="fw-bold">{{date}}</h4>
+            <h4 class="fw-bold">{{comment}}</h4>
             <ul>
+            <li>Date: {{ date }}</li>
+            {{#if diveNumber}}
             <li>Dive number: {{ diveNumber }}</li>
+            {{/if}}
             {{#if timeIn}}
             <li>Time-in: {{ timeIn }} </li>
             {{/if}}
@@ -46,11 +49,11 @@
               </li>
               <li class="d-flex align-items-center me-3">
                 <svg class="bi " width="1em" height="1em"> <use xlink:href="#geo-fill"></use></svg>
-                <small>{{location}}</small>
+                <normal>{{location}}</normal>
               </li>
               <li class="d-flex align-items-center me-3">
                 <svg class="bi " width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small>{{username}}</small>
+                <normal>{{username}}</normal>
               </li>
               <li class="d-flex align-items-center me-3">
                 <a  href="/dive/{{this.id}}/dive-details"> Details</a>
