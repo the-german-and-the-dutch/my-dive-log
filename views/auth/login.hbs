@@ -1,10 +1,18 @@
-<section id="login" class="vh-100 bg-image"
+  <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+    <script type="module" src="/js/script.js"></script>
+
+
+<section id="login" class=" vh-100 vw-98 bg-image"
   style="background-image: url('../images/reef-login.jpeg'); padding-bottom:0;">
-  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+  <div class="mask d-flex justify-content-center align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-12 col-md-8 col-lg-6 col-xl-4">
-          <div class="card shadow-lg border-0 rounded-15" style="width: 400px; height: 600px; margin-top: 80px;">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center">
+          <div class="card shadow-lg border-0 rounded-15" style="width: 350px; height: 600px; margin-top: 80px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Login</h2>
               <form action="/auth/login" method="POST">
