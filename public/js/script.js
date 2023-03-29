@@ -6,7 +6,7 @@
 //
 // Scripts
 // 
-import './bootstrap'
+//import './bootstrap'
 window.addEventListener('DOMContentLoaded', event => {
 
   // Navbar shrink function

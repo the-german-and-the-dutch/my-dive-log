@@ -1,11 +1,25 @@
-body {
-    color: aliceblue;
+ body {
+    background-image: url("../images/portfolio/ray-portfolio.jpeg");
+    background-size: cover;
 }
 
 .form-group {
     opacity: 80%;
 }
+
 #submitBtn {
     margin-top: 35px;
     margin-bottom: 80px;
+}
+
+#goBackBtn {
+    margin-top: 35px;
+    margin-bottom: 80px;
+    margin-left: 15px;
+}
+
+#deleteBtn {
+    margin-top: 35px;
+    margin-bottom: 80px;
+    margin-left: 15px;    
 }
