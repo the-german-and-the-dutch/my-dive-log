@@ -40,26 +40,23 @@
             <li>Visibility: {{ visibility }} </li>
             {{/if}}
             </ul>
-            {{#if comment}}
-            <p class="fw-bold"> {{ comment }}</p>
-            {{/if}}
             <ul class="d-flex list-unstyled mt-auto">
               <li class="me-auto">
                 
               </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi " width="1em" height="1em"> <use xlink:href="#geo-fill"></use></svg>
-                <normal>{{location}}</normal>
+               <li class="d-flex align-items-center ml-2 me-3 fs-4 bi bi-geo-fill  ">
+            
+                <small>{{location}}</small>
               </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi " width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <normal>{{username}}</normal>
+              <li class="d-flex align-items-center me-3 fs-4 bi bi-person ">
+              
+                <small>{{username}}</small>
               </li>
-              <li class="d-flex align-items-center me-3">
-                <a  href="/dive/{{this.id}}/dive-details"> Details</a>
+              <li class="d-flex align-items-center me-3 btn btn-info ">
+                <a class="text-black text-decoration-none " href="/dive/{{this.id}}/dive-details"> Details</a>
               </li>
-              <li class="d-flex align-items-center">
-                <a href="/dive/{{this.id}}/dive-edit"> Edit</a>
+              <li class="d-flex align-items-center btn btn-primary" >
+                <a class="text-black text-decoration-none" href="/dive/{{this.id}}/dive-edit"> Edit</a>
               </li>
              </ul>
           </div>
