@@ -71,7 +71,7 @@ Views:
         []- not found
 
 Bugs to fix:
-    [] - Nav bar in every view
+    [x] - Nav bar in every view
     [x] - Double login
 
 
