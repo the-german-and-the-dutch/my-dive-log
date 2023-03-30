@@ -21,6 +21,12 @@ My Dive Log is a web application that allows users to create and manage their di
 
 To use My Dive Log, simply sign up or log in to create your own personal dive log. You can then start entering your dive data and manage your logs as needed.
 
+## Credits
+ This web application was created by [Pim Bloom](https://github.com/8lom) & [Christoph Weber](https://github.com/Webster312)
+
+ ## License 
+  This project is licensed under the MIT License - see the [LICENSE](https://github.com/the-german-and-the-dutch/my-dive-log/blob/main/MIT%20License.txt) file for details.
+
 
 
 
