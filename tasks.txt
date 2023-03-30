@@ -78,5 +78,5 @@ Bugs to fix:
 To do today
     [] - logout page
     [] - not found page
-    [] - User profile
+    [x] - User profile
     [] - Dive details   

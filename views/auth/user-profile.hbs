@@ -9,25 +9,25 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="img-fluid rounded-circle">
+          <img src="../images/portfolio/profile.jpg" alt="Profile Picture" class="img-fluid rounded-circle">
           <h1>{{ user.username }}</h1>
-          <p class="lead">Web Developer</p>
+          <p class="lead">Recreational Diver</p>
           <ul class="list-unstyled">
-            <li><i class="fas fa-envelope"></i> john.doe@example.com</li>
-            <li><i class="fas fa-phone"></i> (123) 456-7890</li>
-            <li><i class="fas fa-map-marker-alt"></i> New York, NY</li>
+            <li><i class="fas fa-envelope"></i>{{ user.email }}</li>
+            <li><i class="fas fa-map-marker-alt"></i> Vancouver, Canada </li>
           </ul>
         </div>
         <div class="col-md-8">
           <h2 class="text-primary" >About Me</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim aliquet nulla eu euismod. Proin finibus consequat odio, ut tristique nisi. Integer eu malesuada lorem. Morbi vel faucibus mauris, ut dapibus orci. Fusce placerat consectetur lectus eu vehicula. Donec volutpat justo in diam porttitor, quis finibus felis imperdiet. Integer sit amet orci id leo gravida congue. Quisque sed augue lacinia, malesuada elit vitae, consequat enim. Vestibulum auctor, leo a lacinia finibus, massa nibh hendrerit lectus, ac fringilla lacus turpis a mi.</p>
-          <h2>Skills</h2>
+          <p>I'm a passionate recreational diver who loves exploring the underwater world. 
+             I've visited dive locations worldwide and can't wait for my next adventure. 
+             The beauty and fragility of the ocean have taught me to respect and preserve it. 
+             I'm always inspired by the magic of the ocean and the new species I encounter.
+          </p>
+          <h3>Dive License</h3>
           <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Bootstrap</li>
-            <li>PHP</li>
+            <li>Padi Open Water Diver</li>
+            <li>Advanced Open Water Diver</li>
           </ul>
         </div>
       </div>
@@ -41,16 +41,15 @@
 
 
 
+<a id="myLogbookBtn" href="/dive/my-logbook" class="btn btn-primary" role="button">My Logbook</a>
 
-<button>
-    <a href="/auth/user-profile">Reload the page</a>
-</button>
-
+   
 
 
 
-<li class="nav-item">
+
+
+
     <form method="POST" action='/auth/logout'>
-      <button class="nav-link logout-btn" type="submit">Logout</button>
+      <button id="logoutBtn" class="btn btn-danger logout-btn" type="submit">Logout</button>
     </form>
-  </li>
