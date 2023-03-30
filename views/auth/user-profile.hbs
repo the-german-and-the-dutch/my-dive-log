@@ -50,6 +50,6 @@
 
 
 
-    <form method="POST" action='/auth/logout'>
+    <form method="POST" action='/auth/logout' onsubmit="return confirm('Are you sure you want logout?');">
       <button id="logoutBtn" class="btn btn-danger logout-btn" type="submit">Logout</button>
     </form>

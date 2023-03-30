@@ -78,7 +78,7 @@ router.post("/dive", isUserLoggedIn, async (req, res, next) => {
 
   Dive.create(diveDetails)
     .then((diveFromDB) => {
-      res.redirect("dive");
+      res.redirect("dive/my-logbook");
     })
     .catch((e) => {
       console.log("error creating new dive", e);
@@ -173,7 +173,7 @@ router.post("/dive/:diveId/delete",/*isUserLoggedIn,*/ (req, res, next) => {
  console.log("req.body", req.body)
   if (req.body.deleteMethod === "DELETE") {
       Dive.findByIdAndDelete(diveId)
-          .then(() => res.redirect("/dive"))
+          .then(() => res.redirect("/dive/my-logbook"))
           .catch((error) => next(error));
   } else {
       // Handle invalid request method
