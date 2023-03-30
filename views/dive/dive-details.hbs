@@ -4,7 +4,7 @@
 
 <form method="post" action="/dive/{{dive._id}}/dive-details">
 
-    <h3>Dive on {{ dive.date }}</h3>
+    <h3>Dive on: {{ dive.date }}</h3>
 
     <ul>
         <li>Location: {{ dive.location }} </li>
@@ -17,7 +17,7 @@
         <li>Air-start: {{ dive.airStart }} Psi </li>
         <li>Air-end: {{ dive.airEnd }} Psi</li>
         <li>Visibility: {{ dive.visibility }} </li>
-        <p> {{ dive.comment }}</p>
+        <li>Comment: {{ dive.comment }}</li>
     </ul>
 
 </form>

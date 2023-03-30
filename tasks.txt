@@ -52,7 +52,7 @@ Route:
 
 
 Views: 
-    []- layout
+    [x]- layout
         []- nav
     [x]- homepage/index
     
@@ -71,6 +71,12 @@ Views:
         []- not found
 
 Bugs to fix:
-    [] - Nav bar in ecery view
-    [] - Double login
-            
+    [] - Nav bar in every view
+    [x] - Double login
+
+
+To do today
+    [] - logout page
+    [] - not found page
+    [] - User profile
+    [] - Dive details   
