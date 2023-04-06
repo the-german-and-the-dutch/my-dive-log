@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get(
   "/dive",
-  /*isUserLoggedIn,*/ (req, res, next) => {
+  isUserLoggedIn,  (req, res, next) => {
     Dive.find()
     .populate("username")
       .then((diveArr) => {
@@ -30,7 +30,7 @@ router.get(
 );
 
 // display users logbook
-router.get("/dive/my-logbook", /*isUserLoggedIn,*/ (req, res, next) => {
+router.get("/dive/my-logbook", isUserLoggedIn, (req, res, next) => {
  
   Dive.find({userId :req.session.currentUser._id})
   
@@ -168,7 +168,7 @@ router.get("/dive/:diveId/dive-details", isUserLoggedIn, (req, res, next) => {
 });
 
 // Delete
-router.post("/dive/:diveId/delete",/*isUserLoggedIn,*/ (req, res, next) => {
+router.post("/dive/:diveId/delete", isUserLoggedIn, (req, res, next) => {
   const { diveId } = req.params;
  console.log("req.body", req.body)
   if (req.body.deleteMethod === "DELETE") {
